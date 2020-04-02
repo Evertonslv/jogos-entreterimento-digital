@@ -1,1 +1,0 @@
-# Pasta onde constarão os fontes e assets do jogo
