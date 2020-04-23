@@ -1,2 +1,2 @@
 # Jogo Boca Maluca
-# Equipe 5
+# Equipe 7
