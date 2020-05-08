@@ -13,13 +13,6 @@ public class Movimentar : MonoBehaviour
 	void Start()
 	{
 		objMovimentar = GetComponent<Renderer>().material;
-
-		if (isMovimentaPorTransform)
-		{
-			//Quaternion rot = transform.rotation;
-			//rot.y += 20f;
-			//transform.rotation = rot;
-		}
 	}
 
 
@@ -27,7 +20,7 @@ public class Movimentar : MonoBehaviour
 	{
 		if (isMovimentaPorTransform)
 		{
-			transform.Translate(0, Propriedades.VELOCIDADE_DENTES * Time.deltaTime, 0);
+			transform.Translate(0, (Propriedades.VELOCIDADE_DENTES) * 0.05f, 0);
 		}
 		else
 		{

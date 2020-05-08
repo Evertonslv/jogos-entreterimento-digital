@@ -19,6 +19,12 @@ public class Remove : MonoBehaviour
         if(collision.gameObject.name == "escova")
         {
             Propriedades.PONTUACAO += 1;
+
+            if (Propriedades.PONTUACAO > 0 && Propriedades.PONTUACAO % 3 == 0)
+            {
+                Propriedades.VELOCIDADE_DENTES += 0.2f;
+            }
+
             this.Destruir();
         }
     }

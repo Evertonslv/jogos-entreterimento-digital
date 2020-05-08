@@ -17,9 +17,9 @@ public class CriaNovoObjeto : MonoBehaviour
     {
        segundos += Time.deltaTime % 60;
 
-        if (ultimoTempoCriado == 0 || (segundos - ultimoTempoCriado) > 3.0)
+        if (ultimoTempoCriado == 0 || (segundos - ultimoTempoCriado) > (1.5-(Propriedades.VELOCIDADE_DENTES*0.08)))
         {
-            int posicao = Random.Range(1, 3);
+            int posicao = Random.Range(1, 5);
             Transform objPos = null;
 
             switch (posicao)
@@ -34,6 +34,12 @@ public class CriaNovoObjeto : MonoBehaviour
 
                 case 3:
                     objPos = posicao3;
+                    break;
+                case 4:
+                    objPos = posicao4;
+                    break;
+                case 5:
+                    objPos = posicao5;
                     break;
             }
 

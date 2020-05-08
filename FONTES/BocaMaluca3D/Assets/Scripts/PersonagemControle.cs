@@ -13,9 +13,9 @@ public class PersonagemControle : MonoBehaviour
 
     // Indicacao da direcao
     private bool isEsquerda = true;
-    private double anguloMaximo = 0.08347217;
-    private float velocidadeLimpa = 00001;
-    private float velocidadeMovimenta = 0.050f;
+    private double anguloMaximo = 0.09;
+    private float velocidadeLimpa = Propriedades.VELOCIDADE_DENTES * 000001;
+    private float velocidadeMovimenta = Propriedades.VELOCIDADE_DENTES * 0.030f;
 
     void Start()
     {
@@ -78,8 +78,5 @@ public class PersonagemControle : MonoBehaviour
         }
 
         colisao.enabled = Propriedades.ISLIMPANDO;
-
-        Debug.Log(Propriedades.QTDVIDA);
-        Debug.Log(Propriedades.PONTUACAO);
     }
 }
