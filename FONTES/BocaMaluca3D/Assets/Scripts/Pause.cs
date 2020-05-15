@@ -7,9 +7,18 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour, IPointerDownHandler
 {
-    public Button btnPause;
+    public Button btnEsquerda;
+    public Button btnDireita;
+    public Button btnLimpar;
     private float larguraBotao = 160;
     private float alturaBotao = 40;
+
+    void Update() 
+    {
+        btnEsquerda.gameObject.SetActive(!Propriedades.PAUSE);
+        btnDireita.gameObject.SetActive(!Propriedades.PAUSE);
+        btnLimpar.gameObject.SetActive(!Propriedades.PAUSE);
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -37,5 +46,5 @@ public class Pause : MonoBehaviour, IPointerDownHandler
  		Propriedades.ReiniciarPropriedades();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
-
+    
 }

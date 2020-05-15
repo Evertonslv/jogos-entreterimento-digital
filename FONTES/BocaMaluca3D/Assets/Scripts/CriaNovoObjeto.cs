@@ -15,7 +15,7 @@ public class CriaNovoObjeto : MonoBehaviour
 
     void Update()
     {
-        if(!Propriedades.PAUSE)
+        if(!Propriedades.PAUSE && Propriedades.QTDVIDA > 0)
         {
             CriaObjeto();
         }       

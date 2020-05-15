@@ -8,10 +8,9 @@ public class MovimentarMainCamera : MonoBehaviour
     private bool iniciarJogo = false;
     private float alturaBotao = 40;
     private float larguraBotao = 160;
-    private float velocidadeMovimento = 0.02f;
-    private float velocidadeMovimentoRotation = 0.00001f;
-    private Vector3 positionFinal = new Vector3(541.3f, 482.24f, -299.17f);
-    private Quaternion rotationFinal = Quaternion.Euler(49.3f, 0f, 0f);
+    private float timer = 0f;
+    private Vector3 posicaoFinal = new Vector3(541f, 482.24f, -299.17f);
+    private Quaternion rotacaoFinal = Quaternion.Euler(49.316f, 0f, 0f);
 
     void Start() 
     {
@@ -22,9 +21,15 @@ public class MovimentarMainCamera : MonoBehaviour
     {
         if(iniciarJogo)
         {
-            if(transform.rotation != rotationFinal)
+            SetaValorPosicao();
+            
+            if(transform.rotation != rotacaoFinal)
             {
-                setValueRotation();
+                SetaValorRotacao();
+            }
+            else
+            {
+                MudaCena();
             }
         }
     }
@@ -40,82 +45,19 @@ public class MovimentarMainCamera : MonoBehaviour
         }
     }
 
-    void setValuePosition() {
-        float positionX = transform.position.x;
-        float positionY = transform.position.y;
-        float positionZ = transform.position.z;
-
-        if(positionX < 541.3f)
-        {
-            positionX += positionX * velocidadeMovimento * Time.deltaTime;
-        }
-        else
-        {
-            positionX = 541.3f;
-        }
-
-        if(positionY > 482.24f)
-        {
-            positionY -= positionY * velocidadeMovimento * Time.deltaTime;
-        }
-        else
-        {
-            positionY = 482.24f;
-        }
-
-        if(positionZ > -299.17f)
-        {
-            positionZ += positionZ * velocidadeMovimento * Time.deltaTime;
-        }
-        else
-        {
-            positionZ = -299.17f;
-        }
-
-        transform.position = new Vector3(positionX, positionY, positionZ);
+    void SetaValorPosicao() 
+    {
+        transform.position = Vector3.Slerp(transform.position, posicaoFinal, timer/50f);
+        timer += Time.deltaTime;
     }
 
-    void setValueRotation()
+    void SetaValorRotacao()
     {
-        float rotationX = transform.rotation.x;
-        float rotationY = transform.rotation.y;
-        float rotationZ = transform.rotation.z;
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoFinal,  Time.deltaTime * 2.0f);
+    }
 
-        Debug.Log("x" + rotationX);
-        Debug.Log("y" + rotationY);
-        Debug.Log("z" + rotationZ);
-
-        if(rotationX > 49.316f)
-        {
-            rotationX -= rotationX * velocidadeMovimentoRotation * Time.deltaTime;
-        }
-        else
-        {
-            rotationX = 49.316f;
-        }
-
-        if(rotationY > 0f)
-        {
-            rotationY -= rotationY * velocidadeMovimentoRotation * Time.deltaTime;
-        }
-        else
-        {
-            rotationY = 0f;
-        }
-
-        if(rotationZ > 0f)
-        {
-            rotationZ -= rotationZ * velocidadeMovimentoRotation * Time.deltaTime;
-        }
-        else
-        {
-            rotationZ = 0f;
-        }
-
-        Debug.Log("x" + rotationX);
-        Debug.Log("y" + rotationY);
-        Debug.Log("z" + rotationZ);
-
-        transform.rotation = Quaternion.Euler(rotationX, rotationY, rotationZ);
+    void MudaCena()
+    {
+        SceneManager.LoadScene("JogoPrincipal");
     }
 }
