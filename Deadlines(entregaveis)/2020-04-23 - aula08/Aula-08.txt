@@ -1,0 +1,5 @@
+Everton:
+Criou o projeto unity e commitou no git
+
+Jonathan:
+Criou um escopo de como iria funcionar o jogo no unity

@@ -15,7 +15,7 @@ public class PersonagemControle : MonoBehaviour
     private bool isEsquerda = true;
     private double anguloMaximo = 0.09;
     private float velocidadeLimpa = Propriedades.VELOCIDADE_DENTES * 000001;
-    private float velocidadeMovimenta = Propriedades.VELOCIDADE_DENTES * 0.030f;
+    private float velocidadeMovimenta = Propriedades.VELOCIDADE_DENTES * 0.080f;
 
     void Start()
     {
@@ -30,7 +30,7 @@ public class PersonagemControle : MonoBehaviour
         //Input.GetMouseButtonDown(0)
         //Input.GetMouseButtonUp(0)
 
-#if !UNITY_ANDROID || !UNITY_IOS
+#if !UNITY_ANDROID && !UNITY_IOS
         Propriedades.ISLIMPANDO = Input.GetKey(KeyCode.Space);
 #endif
         if (Propriedades.ISLIMPANDO)

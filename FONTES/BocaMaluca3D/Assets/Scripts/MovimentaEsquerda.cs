@@ -13,7 +13,7 @@ public class MovimentaEsquerda : MonoBehaviour, IPointerDownHandler, IPointerUpH
     {
         btnEsquerda.gameObject.SetActive(false);
 #if UNITY_ANDROID
-        btnEsquerda.gameObject.SetActive(false);
+        btnEsquerda.gameObject.SetActive(true);
 #elif UNITY_IOS
         btnEsquerda.gameObject.SetActive(true);
 #endif

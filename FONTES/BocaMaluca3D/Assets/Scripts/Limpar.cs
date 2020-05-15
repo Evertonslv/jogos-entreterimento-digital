@@ -13,7 +13,7 @@ public class Limpar : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         botaoLimpar.gameObject.SetActive(false);
 #if UNITY_ANDROID
-        botaoLimpar.gameObject.SetActive(false);
+        botaoLimpar.gameObject.SetActive(true);
 #elif UNITY_IOS
         botaoLimpar.gameObject.SetActive(true);
 #endif

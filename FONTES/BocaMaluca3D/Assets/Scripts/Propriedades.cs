@@ -10,13 +10,13 @@ public class Propriedades : MonoBehaviour
 
     public static bool ISLIMPANDO = false;
     // Indica para qual lado deve ir o objeto
-    public static int MOVIMENTO = 0;
-
-    public static int PONTUACAO = 0;
-
-    public static int QTDVIDA = 8;
-
     public static float VELOCIDADE_DENTES = 2;
+    public static float DESLOCAMENTO = 0;
+    public static int MOVIMENTO = 0;
+    public static int PONTUACAO = 0;
+    public static int QTDVIDA = 8;
+    public static bool PAUSE = false;
+    public static bool REINICIARJOGO = false;
 
     void Update()
     {
@@ -30,6 +30,16 @@ public class Propriedades : MonoBehaviour
         vida6.SetActive(QTDVIDA > 5);
         vida7.SetActive(QTDVIDA > 6);
         vida8.SetActive(QTDVIDA > 7);
+    }
+
+    public static void ReiniciarPropriedades() 
+    {
+        VELOCIDADE_DENTES = 2;
+        DESLOCAMENTO = 0;
+        MOVIMENTO = 0;
+        PONTUACAO = 0;
+        QTDVIDA = 8;
+        PAUSE = false;
     }
 
 }

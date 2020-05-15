@@ -13,7 +13,7 @@ public class MovimentaDireita : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     {
         btnDireita.gameObject.SetActive(false);
 #if UNITY_ANDROID
-        btnDireita.gameObject.SetActive(false);
+        btnDireita.gameObject.SetActive(true);
 #elif UNITY_IOS
         btnDireita.gameObject.SetActive(true);
 #endif

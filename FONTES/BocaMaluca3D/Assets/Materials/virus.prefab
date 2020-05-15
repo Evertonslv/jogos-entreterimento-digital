@@ -109,8 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac9d79ca285f8647a4b279e2b1348be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMovimentaPorTransform: 1
+  txtFimDeJogo: {fileID: 0}
   objMovimentar3D: {fileID: 7214044689983278566}
+  isMovimentaPorTransform: 1
 --- !u!114 &1757697351060242028
 MonoBehaviour:
   m_ObjectHideFlags: 0

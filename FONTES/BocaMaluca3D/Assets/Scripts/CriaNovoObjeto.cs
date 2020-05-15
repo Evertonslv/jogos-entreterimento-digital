@@ -15,7 +15,15 @@ public class CriaNovoObjeto : MonoBehaviour
 
     void Update()
     {
-       segundos += Time.deltaTime % 60;
+        if(!Propriedades.PAUSE)
+        {
+            CriaObjeto();
+        }       
+    }
+
+    void CriaObjeto()
+    {
+        segundos += Time.deltaTime % 60;
 
         if (ultimoTempoCriado == 0 || (segundos - ultimoTempoCriado) > (1.5-(Propriedades.VELOCIDADE_DENTES*0.08)))
         {
@@ -48,6 +56,6 @@ public class CriaNovoObjeto : MonoBehaviour
 
             Instantiate(spawnee, objPos.position, objPos.rotation);
             ultimoTempoCriado = segundos;
-           }    
-       }
+        }
+    }
 }
