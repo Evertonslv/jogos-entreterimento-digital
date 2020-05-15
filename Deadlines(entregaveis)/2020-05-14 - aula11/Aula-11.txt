@@ -1,0 +1,9 @@
+Everton:
+Criou a pausa do jogo
+Criou o fim de jogo
+Iniciou a animação do inicio do jogo
+
+Jonathan:
+Aprimorou a lógica do jogo
+Criou a pontuação quando consegue limpara o dente
+Criou perda de vida quando o dente passa da escova

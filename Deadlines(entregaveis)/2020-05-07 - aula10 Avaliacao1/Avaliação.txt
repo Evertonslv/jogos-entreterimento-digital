@@ -1,0 +1,3 @@
+Ambos apresentaram o que estava pronto do jogo até o momento.
+
+Foi visto com o professor que o menu iniciar poderia ter uma animação com a camera aproximando o rosto até chegar nos dentes.

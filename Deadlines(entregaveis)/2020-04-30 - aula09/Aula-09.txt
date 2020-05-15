@@ -1,8 +1,10 @@
 Everton
-Criou menu iniciar
+Criou menu iniciar.
+Iniciou o layout do menu iniciar
 
 Jonathan
-Criou o inicio do jogo
+Criou o layout e os componetes usados no jogo, como escova, dente, bacterias no dente, e o rosto.
+Iniciou a lógica do jogo.
 
 
-Ambos discutiram como iria ficar o cenario do jogo, quais os componetes iriam aparecer durante o jogo.
+Ambos discutiram como iria ficar o cenario do jogo e quais os componetes iriam aparecer durante o jogo.
