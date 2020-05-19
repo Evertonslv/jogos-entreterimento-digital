@@ -3,7 +3,8 @@ guid: 208a805a0c488714480fc1fbe7c6f905
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - somNaoLimpou: {fileID: 8300000, guid: 478daeeefe5bb2844a0304d2b1b6cdb6, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

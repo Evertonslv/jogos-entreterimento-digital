@@ -15,19 +15,23 @@ public class Movimentar : MonoBehaviour
 	public Text txtFimDeJogo;
 	public Transform objMovimentar3D;
 	public Boolean isMovimentaPorTransform = false;
+	public AudioSource somFundo;
+	public AudioClip somFimDeJogo;
 
 	void Start()
 	{
+		somFundo.Play();
 		objMovimentar = GetComponent<Renderer>().material;
 		txtFimDeJogo.gameObject.SetActive(false);
 	}
-
 
 	void Update()
 	{
 		if(Propriedades.QTDVIDA == 0)
 		{
 			gameOver = true;
+			somFundo.Stop();
+			GetComponent<AudioSource>().PlayOneShot(somFimDeJogo, 0.5f);
 			txtFimDeJogo.gameObject.SetActive(true);
 		}
 		else if(!Propriedades.PAUSE)
@@ -53,7 +57,7 @@ public class Movimentar : MonoBehaviour
     {   
         if(gameOver) 
         {
-            if (GUI.Button(new Rect(Screen.width/2-larguraBotao/2, Screen.height/2 + alturaBotao, larguraBotao, alturaBotao), "INICIAR JOGO"))
+            if (GUI.Button(new Rect(Screen.width/2-larguraBotao/2, Screen.height/2 + alturaBotao, larguraBotao, alturaBotao), "REINICIAR JOGO"))
             {
                ReiniciarJogo();
             }

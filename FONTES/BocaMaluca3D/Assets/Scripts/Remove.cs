@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class Remove : MonoBehaviour
 {
+    public AudioClip somNaoLimpou;
+
     void Update()
     {
         if (this.transform.position.z < -296.9)
         {
+           GetComponent<AudioSource>().PlayOneShot(somNaoLimpou, 0.5f);
            Propriedades.QTDVIDA -= 1;
            this.Destruir();
         }
