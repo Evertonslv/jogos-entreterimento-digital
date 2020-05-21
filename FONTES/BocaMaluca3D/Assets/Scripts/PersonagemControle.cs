@@ -15,7 +15,7 @@ public class PersonagemControle : MonoBehaviour
     private bool isEsquerda = true;
     private double anguloMaximo = 0.09;
     private float velocidadeLimpa = Propriedades.VELOCIDADE_DENTES * 000001;
-    private float velocidadeMovimenta = Propriedades.VELOCIDADE_DENTES * 0.080f;
+    private float velocidadeMovimenta = Propriedades.VELOCIDADE_DENTES * 0.08f;
 
     void Start()
     {

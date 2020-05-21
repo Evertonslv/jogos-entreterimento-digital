@@ -10,14 +10,16 @@ public class Pause : MonoBehaviour, IPointerDownHandler
     public Button btnEsquerda;
     public Button btnDireita;
     public Button btnLimpar;
+    public Button btnPause;
     private float larguraBotao = 160;
     private float alturaBotao = 40;
 
     void Update() 
     {
-        btnEsquerda.gameObject.SetActive(!Propriedades.PAUSE);
-        btnDireita.gameObject.SetActive(!Propriedades.PAUSE);
+        btnEsquerda.gameObject.SetActive(!Propriedades.PAUSE && Propriedades.QTDVIDA > 0);
+        btnDireita.gameObject.SetActive(!Propriedades.PAUSE && Propriedades.QTDVIDA > 0);
         btnLimpar.gameObject.SetActive(!Propriedades.PAUSE && Propriedades.QTDVIDA > 0);
+        btnPause.gameObject.SetActive(Propriedades.QTDVIDA > 0);
     }
 
     public void OnPointerDown(PointerEventData eventData)

@@ -10,33 +10,32 @@ public class Movimentar : MonoBehaviour
 	private bool gameOver = false;
 	private float larguraBotao = 160;
     private float alturaBotao = 40;
-	private Material objMovimentar;
-	
+	private Material objMovimentar;	
 	public Text txtFimDeJogo;
 	public Transform objMovimentar3D;
 	public Boolean isMovimentaPorTransform = false;
-	public AudioSource somFundo;
 	public AudioClip somFimDeJogo;
 
 	void Start()
 	{
-		somFundo.Play();
 		objMovimentar = GetComponent<Renderer>().material;
 		txtFimDeJogo.gameObject.SetActive(false);
 	}
 
 	void Update()
 	{
-		if(Propriedades.QTDVIDA == 0)
+		if(!gameOver)
 		{
-			gameOver = true;
-			somFundo.Stop();
-			GetComponent<AudioSource>().PlayOneShot(somFimDeJogo, 0.5f);
-			txtFimDeJogo.gameObject.SetActive(true);
-		}
-		else if(!Propriedades.PAUSE)
-		{
-			MovimentaDentes();
+			if(Propriedades.QTDVIDA == 0)
+			{
+				GetComponent<AudioSource>().PlayOneShot(somFimDeJogo);
+				txtFimDeJogo.gameObject.SetActive(true);
+				gameOver = true;
+			}
+			else if(!Propriedades.PAUSE)
+			{
+				MovimentaDentes();
+			}
 		}
 	}
 

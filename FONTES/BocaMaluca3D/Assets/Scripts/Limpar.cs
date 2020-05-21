@@ -23,7 +23,7 @@ public class Limpar : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         Propriedades.ISLIMPANDO = true;
-        GetComponent<AudioSource>().PlayOneShot(somLimpar, 0.5f);
+        GetComponent<AudioSource>().PlayOneShot(somLimpar);
     }
 
     public void OnPointerUp(PointerEventData eventData)

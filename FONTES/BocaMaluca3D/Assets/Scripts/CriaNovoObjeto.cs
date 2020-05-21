@@ -35,11 +35,9 @@ public class CriaNovoObjeto : MonoBehaviour
                 case 1:
                     objPos = posicao1;
                     break;
-
                 case 2:
                     objPos = posicao2;
                     break;
-
                 case 3:
                     objPos = posicao3;
                     break;
