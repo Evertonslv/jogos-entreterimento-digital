@@ -14,12 +14,15 @@ public class Movimentar : MonoBehaviour
 	public Text txtFimDeJogo;
 	public Transform objMovimentar3D;
 	public Boolean isMovimentaPorTransform = false;
-	public AudioClip somFimDeJogo;
 
 	void Start()
 	{
 		objMovimentar = GetComponent<Renderer>().material;
-		txtFimDeJogo.gameObject.SetActive(false);
+		
+		if(txtFimDeJogo != null)
+		{
+			txtFimDeJogo.gameObject.SetActive(false);
+		}
 	}
 
 	void Update()
@@ -28,9 +31,12 @@ public class Movimentar : MonoBehaviour
 		{
 			if(Propriedades.QTDVIDA == 0)
 			{
-				GetComponent<AudioSource>().PlayOneShot(somFimDeJogo);
-				txtFimDeJogo.gameObject.SetActive(true);
 				gameOver = true;
+				
+				if(txtFimDeJogo != null)
+				{
+					txtFimDeJogo.gameObject.SetActive(true);
+				}
 			}
 			else if(!Propriedades.PAUSE)
 			{

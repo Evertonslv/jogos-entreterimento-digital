@@ -8,8 +8,7 @@ using UnityEngine.UI;
 public class Limpar : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public Button botaoLimpar;
-    public AudioClip somLimpar;
-
+    
     private void Start()
     {
         botaoLimpar.gameObject.SetActive(false);
@@ -23,7 +22,6 @@ public class Limpar : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         Propriedades.ISLIMPANDO = true;
-        GetComponent<AudioSource>().PlayOneShot(somLimpar);
     }
 
     public void OnPointerUp(PointerEventData eventData)

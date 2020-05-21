@@ -17,7 +17,7 @@ public class Propriedades : MonoBehaviour
     public static int QTDVIDA = 8;
     public static bool PAUSE = false;
     public static bool REINICIARJOGO = false;
-
+    
     void Update()
     {
         pontuacao.text = PONTUACAO.ToString();

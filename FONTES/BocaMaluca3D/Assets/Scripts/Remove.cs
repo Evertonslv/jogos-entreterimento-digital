@@ -5,14 +5,10 @@ using UnityEngine;
 
 public class Remove : MonoBehaviour
 {
-    public AudioClip somNaoLimpou;
-    public AudioClip somLimpou;
-    
     void Update()
     {
         if (this.transform.position.z < -296.9)
         {
-            GetComponent<AudioSource>().PlayOneShot(somNaoLimpou);
             Propriedades.QTDVIDA -= 1;
             this.Destruir();
         }
@@ -22,7 +18,6 @@ public class Remove : MonoBehaviour
     {
         if(collision.gameObject.name == "escova")
         {
-            GetComponent<AudioSource>().PlayOneShot(somLimpou);
             Propriedades.PONTUACAO += 1;
 
             if (Propriedades.PONTUACAO > 0 && Propriedades.PONTUACAO % 3 == 0)
