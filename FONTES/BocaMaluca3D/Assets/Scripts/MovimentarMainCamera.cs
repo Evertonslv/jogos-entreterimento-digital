@@ -5,17 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MovimentarMainCamera : MonoBehaviour
 {
+    public GUISkin personalizacaoButton;
     private bool iniciarJogo = false;
-    private float alturaBotao = 40;
-    private float larguraBotao = 160;
     private float timer = 0f;
     private Vector3 posicaoFinal = new Vector3(541f, 482.24f, -299.17f);
     private Quaternion rotacaoFinal = Quaternion.Euler(49.316f, 0f, 0f);
-
-    void Start() 
-    {
-        
-    }
 
     void Update() 
     {
@@ -38,7 +32,9 @@ public class MovimentarMainCamera : MonoBehaviour
     {
         if(!iniciarJogo) 
         {
-            if (GUI.Button(new Rect(Screen.width/2-larguraBotao/2 - 15, Screen.height/2 + alturaBotao, larguraBotao, alturaBotao), "INICIAR JOGO"))
+            GUI.skin = personalizacaoButton;
+
+            if (GUI.Button(new Rect(Screen.width/2-Propriedades.LARGURABOTAO/2 - 15, Screen.height/2 + Propriedades.ALTURABOTAO, Propriedades.LARGURABOTAO, Propriedades.ALTURABOTAO), "INICIAR JOGO"))
             {
                 iniciarJogo = true;
             }

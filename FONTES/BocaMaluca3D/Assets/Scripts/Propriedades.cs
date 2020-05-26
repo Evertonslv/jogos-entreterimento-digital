@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Propriedades : MonoBehaviour
 {
+    public static int QTDVIDAPADRAO = 8;
     public Text pontuacao;
     public GameObject vida1, vida2, vida3, vida4, vida5, vida6, vida7, vida8;
 
@@ -12,11 +13,14 @@ public class Propriedades : MonoBehaviour
     // Indica para qual lado deve ir o objeto
     public static float VELOCIDADE_DENTES = 2;
     public static float DESLOCAMENTO = 0;
+    public static float DESLOCAMENTOSUJEIRA = 0;
     public static int MOVIMENTO = 0;
     public static int PONTUACAO = 0;
-    public static int QTDVIDA = 8;
+    public static int QTDVIDA = QTDVIDAPADRAO;
     public static bool PAUSE = false;
     public static bool REINICIARJOGO = false;
+    public static float LARGURABOTAO = 160;
+    public static float ALTURABOTAO = 40;
     
     void Update()
     {
@@ -34,12 +38,14 @@ public class Propriedades : MonoBehaviour
 
     public static void ReiniciarPropriedades() 
     {
+        QTDVIDA = QTDVIDAPADRAO;
+        DESLOCAMENTOSUJEIRA = 0;
         VELOCIDADE_DENTES = 2;
         DESLOCAMENTO = 0;
+        ISLIMPANDO = false;
+        PAUSE = false;
         MOVIMENTO = 0;
         PONTUACAO = 0;
-        QTDVIDA = 8;
-        PAUSE = false;
     }
 
 }

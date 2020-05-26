@@ -8,12 +8,11 @@ using System.Net.Sockets;
 public class Movimentar : MonoBehaviour
 {
 	private bool gameOver = false;
-	private float larguraBotao = 160;
-    private float alturaBotao = 40;
 	private Material objMovimentar;	
 	public Text txtFimDeJogo;
 	public Transform objMovimentar3D;
 	public Boolean isMovimentaPorTransform = false;
+	public GUISkin personalizacaoButton;
 
 	void Start()
 	{
@@ -62,7 +61,9 @@ public class Movimentar : MonoBehaviour
     {   
         if(gameOver) 
         {
-            if (GUI.Button(new Rect(Screen.width/2-larguraBotao/2, Screen.height/2 + alturaBotao, larguraBotao, alturaBotao), "REINICIAR JOGO"))
+			GUI.skin = personalizacaoButton;
+			
+            if (GUI.Button(new Rect(Screen.width/2-Propriedades.LARGURABOTAO/2, Screen.height/2 + Propriedades.ALTURABOTAO, Propriedades.LARGURABOTAO, Propriedades.ALTURABOTAO), "REINICIAR JOGO"))
             {
                ReiniciarJogo();
             }

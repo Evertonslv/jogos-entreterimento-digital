@@ -4,27 +4,69 @@ using UnityEngine;
 
 public class ControleMusica : MonoBehaviour
 {
-	private AudioSource audio;
-    public AudioClip musicaDeFundo;
+	public AudioSource audio;
+    public AudioSource efeito;
     public AudioClip somFimDeJogo;
     public AudioClip somLimpar;
     public AudioClip somNaoLimpou;
     public AudioClip somLimpou;
-
-    void Start()
-    {
-        audio = new AudioSource();
-        audio.clip = musicaDeFundo;
-        audio.loop = true;
-        audio.playOnAwake = true;
-    }
-
+    private int pontuacao;
+    private int qtdVida = Propriedades.QTDVIDAPADRAO;
+    
     void Update()
-    {
-        if(Propriedades.QTDVIDA == 0)
-        {
-            audio.PlayOneShot(somFimDeJogo, 1.0f);
-        }        
+    {        
+        SomGameOver();
+        SomLimpar();
+        SomLimpou();
+        SomNaoLimpou();
     }
 
+    void SomGameOver() 
+    {
+        if(Propriedades.QTDVIDA == 0 && audio.isPlaying)
+        {
+            Propriedades.ISLIMPANDO = false;
+            efeito.PlayOneShot(somFimDeJogo);
+            audio.Stop();
+        }
+        else if(Propriedades.QTDVIDA > 0 && !audio.isPlaying && !Propriedades.PAUSE)
+        {
+            audio.Play();
+        }
+        else if(Propriedades.PAUSE && audio.isPlaying) 
+        {
+            audio.Stop();
+        }
+    }
+
+    void SomLimpar() 
+    {
+        if(Propriedades.ISLIMPANDO)
+        {
+            if(!efeito.isPlaying)
+            {
+                efeito.PlayOneShot(somLimpar);
+            }
+        }
+    }
+
+    void SomLimpou() 
+    {
+        if(pontuacao != Propriedades.PONTUACAO && Propriedades.PONTUACAO > 0)
+        {
+            efeito.PlayOneShot(somLimpou);
+        }
+        
+        pontuacao = Propriedades.PONTUACAO;
+    }
+
+    void SomNaoLimpou()
+    {
+        if(qtdVida != Propriedades.QTDVIDA && Propriedades.QTDVIDA < Propriedades.QTDVIDAPADRAO)
+        {
+            efeito.PlayOneShot(somNaoLimpou, 2F);
+        }
+        
+        qtdVida = Propriedades.QTDVIDA;
+    }
 }

@@ -11,8 +11,7 @@ public class Pause : MonoBehaviour, IPointerDownHandler
     public Button btnDireita;
     public Button btnLimpar;
     public Button btnPause;
-    private float larguraBotao = 160;
-    private float alturaBotao = 40;
+    public GUISkin personalizacaoButton;
 
     void Update() 
     {
@@ -29,14 +28,16 @@ public class Pause : MonoBehaviour, IPointerDownHandler
 
     void OnGUI()
     {   
-        if(Propriedades.PAUSE) 
-        {       
-            if (GUI.Button(new Rect(Screen.width/2-larguraBotao/2 - 15, Screen.height/2 + alturaBotao, larguraBotao, alturaBotao), "REINICIAR JOGO"))
+        if(Propriedades.PAUSE)
+        {      
+            GUI.skin = personalizacaoButton;
+
+            if (GUI.Button(new Rect(Screen.width/2-Propriedades.LARGURABOTAO/2 - 15, Screen.height/2 + Propriedades.ALTURABOTAO, Propriedades.LARGURABOTAO, Propriedades.ALTURABOTAO), "REINICIAR JOGO"))
             {
                 ReiniciarJogo();
             }
 
-            if (GUI.Button(new Rect(Screen.width/2-larguraBotao/2 - 15, Screen.height/2 + alturaBotao + 45, larguraBotao, alturaBotao), "CONTINUAR JOGO"))
+            if (GUI.Button(new Rect(Screen.width/2-Propriedades.LARGURABOTAO/2 - 15, Screen.height/2 + Propriedades.ALTURABOTAO + 55, Propriedades.LARGURABOTAO, Propriedades.ALTURABOTAO), "CONTINUAR JOGO"))
             {
                 Propriedades.PAUSE = false;
             }

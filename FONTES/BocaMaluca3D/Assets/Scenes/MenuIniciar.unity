@@ -469,6 +469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23768adc0250af64da87dca59d16ce8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  personalizacaoButton: {fileID: 11400000, guid: f323096a9dac8bd47bc7cbd80bb6f01f,
+    type: 2}
 --- !u!224 &1025475035
 RectTransform:
   m_ObjectHideFlags: 0
