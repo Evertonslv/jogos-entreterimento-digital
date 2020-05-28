@@ -15,45 +15,43 @@ public class MovimentarMainCamera : MonoBehaviour
     {
         if(iniciarJogo)
         {
+            SetaValorRotacao();
             SetaValorPosicao();
+
+            timer += Time.deltaTime;
             
-            if(transform.rotation != rotacaoFinal)
-            {
-                SetaValorRotacao();
-            }
-            else
+            if(transform.position == posicaoFinal && transform.rotation == rotacaoFinal)
             {
                 MudaCena();
             }
         }
     }
 
-    void OnGUI()
-    {
-        if(!iniciarJogo) 
-        {
-            GUI.skin = personalizacaoButton;
-
-            if (GUI.Button(new Rect(Screen.width/2-Propriedades.LARGURABOTAO/2 - 15, Screen.height/2 + Propriedades.ALTURABOTAO, Propriedades.LARGURABOTAO, Propriedades.ALTURABOTAO), "INICIAR JOGO"))
-            {
-                iniciarJogo = true;
-            }
-        }
-    }
-
     void SetaValorPosicao() 
     {
-        transform.position = Vector3.Slerp(transform.position, posicaoFinal, timer/50f);
-        timer += Time.deltaTime;
+        transform.position = Vector3.Slerp(transform.position, posicaoFinal, timer/20f);
     }
 
     void SetaValorRotacao()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoFinal,  Time.deltaTime * 2.0f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotacaoFinal,  timer/20f);
     }
 
     void MudaCena()
     {
         SceneManager.LoadScene("JogoPrincipal");
+    }
+    
+    void OnGUI()
+    {
+        if(!iniciarJogo)
+        {
+            GUI.skin = personalizacaoButton;
+
+            if (GUI.Button(new Rect(Screen.width/2-Propriedades.LARGURABOTAO/2 + 18, Screen.height/2 + Propriedades.ALTURABOTAO + 80, Propriedades.LARGURABOTAO, Propriedades.ALTURABOTAO), "INICIAR JOGO"))
+            {
+                iniciarJogo = true;
+            }
+        }
     }
 }
