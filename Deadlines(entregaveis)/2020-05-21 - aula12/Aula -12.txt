@@ -1,0 +1,5 @@
+Everton:
+Melhorou a rotina de animação da camera no inicio do jogo
+
+Ambos:
+Ajustaram a rotina de audio do jogo, criando uma nova classe para executar cada audio em seu tempo
