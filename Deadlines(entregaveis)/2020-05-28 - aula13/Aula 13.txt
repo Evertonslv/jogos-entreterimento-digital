@@ -1,0 +1,3 @@
+Everton - Jonathan
+
+Ambos trabalharam na correção de alguns bugs e melhorias no codigo e na performance
