@@ -110,6 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtFimDeJogo: {fileID: 0}
+  txtRecorde: {fileID: 0}
+  descricaoPlacaRecorde: {fileID: 0}
   objMovimentar3D: {fileID: 7214044689983278566}
   isMovimentaPorTransform: 1
   personalizacaoButton: {fileID: 0}

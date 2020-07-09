@@ -32,12 +32,20 @@ public class Pause : MonoBehaviour, IPointerDownHandler
         {      
             GUI.skin = personalizacaoButton;
 
+#if UNITY_ANDROID
+            Propriedades.LARGURABOTAO = 200;
+            Propriedades.ALTURABOTAO = 60;
+            GUI.skin.button.fontSize = 20;
+#elif UNITY_STANDALONE
+            GUI.skin.button.fontSize = 18;
+#endif
+
             if (GUI.Button(new Rect(Screen.width/2-Propriedades.LARGURABOTAO/2 - 15, Screen.height/2 + Propriedades.ALTURABOTAO, Propriedades.LARGURABOTAO, Propriedades.ALTURABOTAO), "REINICIAR JOGO"))
             {
                 ReiniciarJogo();
             }
 
-            if (GUI.Button(new Rect(Screen.width/2-Propriedades.LARGURABOTAO/2 - 15, Screen.height/2 + Propriedades.ALTURABOTAO + 55, Propriedades.LARGURABOTAO, Propriedades.ALTURABOTAO), "CONTINUAR JOGO"))
+            if (GUI.Button(new Rect(Screen.width/2-Propriedades.LARGURABOTAO/2 - 15, Screen.height/2 + Propriedades.ALTURABOTAO + 75, Propriedades.LARGURABOTAO, Propriedades.ALTURABOTAO), "CONTINUAR JOGO"))
             {
                 Propriedades.PAUSE = false;
             }

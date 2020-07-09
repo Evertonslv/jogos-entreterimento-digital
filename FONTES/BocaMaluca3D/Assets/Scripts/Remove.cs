@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 public class Remove : MonoBehaviour
 {
+    private static int controlePontuacao = 20;
+
     void Update()
-    {
-        if (this.transform.position.z < -296.9)
+    {        
+        if (PodeDestruir())
         {
             Propriedades.QTDVIDA -= 1;
             this.Destruir();
@@ -20,17 +18,28 @@ public class Remove : MonoBehaviour
         {
             Propriedades.PONTUACAO += 1;
 
-            if (Propriedades.PONTUACAO > 0 && Propriedades.PONTUACAO % 3 == 0)
+            Debug.Log(controlePontuacao);
+
+            if ((Propriedades.PONTUACAO % controlePontuacao) == 0)
             {
-                Propriedades.VELOCIDADE_DENTES += Time.deltaTime * 0.2f;
+                controlePontuacao += (20 + (Propriedades.LEVEL * 3));
+                Propriedades.CRIARNOVOSOBJETOS = false;
             }
 
             this.Destruir();
         }
     }
 
+    bool PodeDestruir()
+    {
+        return this.transform.position.z < -296.9 ||
+            (this.transform.position.x < 538.42 && this.transform.position.y > 473.20) ||
+            (this.transform.position.x < 540.02 && this.transform.position.y > 473.70);
+    }
+
     void Destruir()
     {
+        Propriedades.QUANTIDADEOBJETOS--;
         Destroy(this.gameObject);
     }
 }

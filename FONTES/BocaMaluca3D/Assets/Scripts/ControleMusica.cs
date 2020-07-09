@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControleMusica : MonoBehaviour
 {
-	public AudioSource audio;
+	public AudioSource audioPrincipal;
     public AudioSource efeito;
     public AudioClip somFimDeJogo;
     public AudioClip somLimpar;
@@ -23,19 +23,19 @@ public class ControleMusica : MonoBehaviour
 
     void SomGameOver() 
     {
-        if(Propriedades.QTDVIDA == 0 && audio.isPlaying)
+        if(Propriedades.QTDVIDA == 0 && audioPrincipal.isPlaying)
         {
             Propriedades.ISLIMPANDO = false;
             efeito.PlayOneShot(somFimDeJogo);
-            audio.Stop();
+            audioPrincipal.Stop();
         }
-        else if(Propriedades.QTDVIDA > 0 && !audio.isPlaying && !Propriedades.PAUSE)
+        else if(Propriedades.QTDVIDA > 0 && !audioPrincipal.isPlaying && !Propriedades.PAUSE)
         {
-            audio.Play();
+            audioPrincipal.Play();
         }
-        else if(Propriedades.PAUSE && audio.isPlaying) 
+        else if(Propriedades.PAUSE && audioPrincipal.isPlaying) 
         {
-            audio.Stop();
+            audioPrincipal.Stop();
         }
     }
 

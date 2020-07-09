@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CriaNovoObjeto : MonoBehaviour
 {
@@ -15,7 +13,7 @@ public class CriaNovoObjeto : MonoBehaviour
 
     void Update()
     {
-        if(!Propriedades.PAUSE && Propriedades.QTDVIDA > 0)
+        if(!Propriedades.PAUSE && Propriedades.QTDVIDA > 0 && Propriedades.CRIARNOVOSOBJETOS)
         {
             CriaObjeto();
         }       
@@ -27,6 +25,8 @@ public class CriaNovoObjeto : MonoBehaviour
 
         if (ultimoTempoCriado == 0 || (segundos - ultimoTempoCriado) > (1.5-(Propriedades.VELOCIDADE_DENTES*0.08)))
         {
+            Propriedades.QUANTIDADEOBJETOS++;
+
             int posicao = Random.Range(1, 5);
             Transform objPos = null;
 

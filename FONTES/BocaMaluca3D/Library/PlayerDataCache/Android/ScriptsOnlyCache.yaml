@@ -1,11 +1,15 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ControleLevel
+    - ControleMusica
     - CriaNovoObjeto
     - Limpar
     - MovimentaDireita
     - MovimentaEsquerda
     - Movimentar
+    - MovimentarMainCamera
+    - Pause
     - PersonagemControle
     - Propriedades
     - Remove
@@ -45,14 +49,22 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 566}
     - Class: 114
       Script: {instanceID: 11152}
     - Class: 114
@@ -66,23 +78,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11920}
     - Class: 114
-      Script: {instanceID: 12114}
+      Script: {instanceID: 12084}
     - Class: 114
-      Script: {instanceID: 12136}
+      Script: {instanceID: 12116}
     - Class: 114
-      Script: {instanceID: 12346}
+      Script: {instanceID: 12128}
     - Class: 114
-      Script: {instanceID: 12392}
+      Script: {instanceID: 12140}
     - Class: 114
-      Script: {instanceID: 12452}
+      Script: {instanceID: 12350}
     - Class: 114
-      Script: {instanceID: 12596}
+      Script: {instanceID: 12398}
     - Class: 114
-      Script: {instanceID: 12628}
+      Script: {instanceID: 12458}
     - Class: 114
-      Script: {instanceID: 12646}
+      Script: {instanceID: 12602}
     - Class: 114
-      Script: {instanceID: 12948}
+      Script: {instanceID: 12634}
+    - Class: 114
+      Script: {instanceID: 12652}
+    - Class: 114
+      Script: {instanceID: 12958}
+    - Class: 114
+      Script: {instanceID: 31150}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -98,6 +116,57 @@ ScriptsOnlyBuild:
     - Class: 222
       Script: {instanceID: 0}
     - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/MenuIniciar.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 566}
+    - Class: 114
+      Script: {instanceID: 11734}
+    - Class: 114
+      Script: {instanceID: 12662}
+    - Class: 114
+      Script: {instanceID: 12958}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
@@ -338,6 +407,12 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
+      Hash: b4a1b52145932da0525e7744d90a7884
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ControleMusica
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -348,6 +423,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: a366f6042aec299d4572cfba99fbf314
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Pause
   - hash:
       serializedVersion: 2
       Hash: feb9a5a121d15fa3654d4e50a5233045
@@ -452,7 +533,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: e1697dc18fe2533d40a09c2c9c9af65e
+      Hash: 812341810e1d9a5e54542bb12527ec81
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Movimentar
@@ -462,6 +543,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CriaNovoObjeto
+  - hash:
+      serializedVersion: 2
+      Hash: 495b73977f80dfbbafb571f36671e5a5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MovimentarMainCamera
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -570,7 +657,14 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: f1b43403a1a7bc1458ce63fe43af3886
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ControleLevel
   platform: 13
   scenePathNames:
+  - Assets/Scenes/MenuIniciar.unity
   - Assets/Scenes/JogoPrincipal.unity
-  playerPath: D:/Jogos/Boca - 3d/boca_maluca.apk
+  playerPath: C:/Users/everton.silva/Desktop/unity android/Boca Maluca.apk
